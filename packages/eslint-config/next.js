@@ -1,6 +1,7 @@
 import {
   importsConfig,
   nextConfig,
+  playwrightConfig,
   prettierConfig,
   typescriptConfig
 } from '@viclafouch/eslint-config-viclafouch'
@@ -21,5 +22,11 @@ export default [
   ...typescriptConfig,
   ...nextConfig,
   ...importsConfig,
+  ...playwrightConfig.map((config) => {
+    return {
+      ...config,
+      files: ['e2e/**/*.ts']
+    }
+  }),
   ...prettierConfig
 ]

@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "tsc --noEmit && eslint",
     "lint:fix": "tsc --noEmit && eslint --fix",
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@naboo/design-system": "workspace:*",
@@ -23,6 +24,7 @@
   "devDependencies": {
     "@naboo/eslint-config": "workspace:*",
     "@naboo/typescript-config": "workspace:*",
+    "@playwright/test": "^1.58.2",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^25",
     "@types/react": "^19",
