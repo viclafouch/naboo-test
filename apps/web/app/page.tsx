@@ -1,21 +1,26 @@
+import Link from 'next/link'
 import { Button } from '@naboo/design-system'
 
 const Home = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-8 p-8">
-      <div className="flex flex-col items-center gap-3">
-        <h1 className="text-4xl font-bold">Naboo Places</h1>
-        <p className="text-lg text-muted-foreground">
-          Discover unique places to stay
-        </p>
-      </div>
-      <div className="flex flex-wrap justify-center gap-3">
-        <Button>Get started</Button>
-        <Button variant="outline">Browse places</Button>
-        <Button variant="secondary">Explore</Button>
-        <Button variant="ghost">Learn more</Button>
-        <Button variant="destructive">Delete</Button>
-        <Button variant="link">Terms</Button>
+    <main className="flex flex-1 flex-col items-center justify-center px-6">
+      <div className="flex flex-col items-center gap-12">
+        <div className="flex flex-col items-center gap-4">
+          <p className="text-xs font-medium uppercase tracking-[0.3em] text-muted-foreground">
+            Discover the world
+          </p>
+          <h1 className="text-center text-6xl font-bold tracking-tight sm:text-8xl">
+            Naboo Places
+          </h1>
+          <div className="mt-2 h-px w-16 bg-primary/40" />
+          <p className="max-w-md text-center text-lg leading-relaxed text-muted-foreground">
+            Handpicked apartments, houses, and villas in the most beautiful
+            destinations across the globe.
+          </p>
+        </div>
+        <Button size="lg" nativeButton={false} render={<Link href="/search" />}>
+          Browse places
+        </Button>
       </div>
     </main>
   )

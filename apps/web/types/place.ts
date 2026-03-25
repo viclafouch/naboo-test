@@ -22,6 +22,6 @@ export type Place = {
 
 export type SearchPlacesParams = {
   query?: string
-  category?: PlaceCategory
+  category?: string
   page?: number
 }

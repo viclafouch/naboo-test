@@ -1,3 +1,4 @@
+import * as React from 'react'
 import {
   PLACES_PER_PAGE,
   SEARCH_FAILURE_RATE,
@@ -59,13 +60,13 @@ export const searchPlaces = async ({
   }
 }
 
-export const getPlaceBySlug = async (slug: Place['slug']) => {
+export const getPlaceBySlug = React.cache(async (slug: Place['slug']) => {
   const places = await getPlaces()
 
   return places.find((place) => {
     return place.slug === slug
   })
-}
+})
 
 export const getAllSlugs = async () => {
   const places = await getPlaces()
