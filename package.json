@@ -1,0 +1,17 @@
+{
+  "name": "naboo-places",
+  "description": "Place discovery platform — Turborepo monorepo",
+  "private": true,
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "lint:fix": "turbo lint:fix",
+    "check-types": "turbo check-types",
+    "test:e2e": "turbo test:e2e"
+  },
+  "devDependencies": {
+    "turbo": "^2.8.20"
+  },
+  "packageManager": "pnpm@9.15.4"
+}

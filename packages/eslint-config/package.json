@@ -1,0 +1,17 @@
+{
+  "name": "@naboo/eslint-config",
+  "version": "0.0.0",
+  "description": "Shared ESLint configurations for Naboo Places",
+  "private": true,
+  "type": "module",
+  "files": ["base.js", "react.js", "next.js"],
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "dependencies": {
+    "@viclafouch/eslint-config-viclafouch": "5",
+    "eslint": "^9.39.2",
+    "prettier": "^3.3.3"
+  }
+}
