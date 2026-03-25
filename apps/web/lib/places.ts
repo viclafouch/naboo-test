@@ -1,4 +1,4 @@
-import * as React from 'react'
+import { cacheLife, cacheTag } from 'next/cache'
 import {
   PLACES_PER_PAGE,
   SEARCH_FAILURE_RATE,
@@ -28,6 +28,10 @@ export const searchPlaces = async ({
   category,
   page = 1
 }: SearchPlacesParams) => {
+  'use cache'
+  cacheLife('minutes')
+  cacheTag('places')
+
   const [, places] = await Promise.all([
     sleep(Math.random() * SEARCH_MAX_DELAY_MS),
     getPlaces()
@@ -60,15 +64,23 @@ export const searchPlaces = async ({
   }
 }
 
-export const getPlaceBySlug = React.cache(async (slug: Place['slug']) => {
+export const getPlaceBySlug = async (slug: Place['slug']) => {
+  'use cache'
+  cacheLife('days')
+  cacheTag('places', `place-${slug}`)
+
   const places = await getPlaces()
 
   return places.find((place) => {
     return place.slug === slug
   })
-})
+}
 
 export const getAllSlugs = async () => {
+  'use cache'
+  cacheLife('hours')
+  cacheTag('places')
+
   const places = await getPlaces()
 
   return places.map((place) => {
