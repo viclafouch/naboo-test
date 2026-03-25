@@ -20,7 +20,7 @@ const SearchPage = async ({ searchParams }: SearchPageParams) => {
     category,
     page
   } = await searchParamsCache.parse(searchParams)
-  const currentPage = Math.max(1, Number(page))
+  const currentPage = Math.max(1, page)
 
   return (
     <main id="main-content" className="mx-auto w-full max-w-6xl px-6 py-8">
@@ -36,7 +36,11 @@ const SearchPage = async ({ searchParams }: SearchPageParams) => {
           key={`${query}-${category}-${currentPage}`}
           fallback={<PlaceCardSkeletonGrid />}
         >
-          <SearchResults query={query} category={category} page={currentPage} />
+          <SearchResults
+            query={query}
+            category={category ?? undefined}
+            page={currentPage}
+          />
         </React.Suspense>
       </div>
     </main>

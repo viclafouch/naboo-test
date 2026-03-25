@@ -18,7 +18,7 @@ const SearchPagination = ({
   })
 
   const handlePageChange = (page: number) => {
-    void setParams({ page: page <= 1 ? null : String(page) })
+    void setParams({ page: page <= 1 ? null : page })
   }
 
   return (

@@ -3,7 +3,10 @@ import { Button } from '@naboo/design-system'
 
 const Home = () => {
   return (
-    <main className="flex flex-1 flex-col items-center justify-center px-6">
+    <main
+      id="main-content"
+      className="flex flex-1 flex-col items-center justify-center px-6"
+    >
       <div className="flex flex-col items-center gap-12">
         <div className="flex flex-col items-center gap-4">
           <p className="text-xs font-medium uppercase tracking-[0.3em] text-muted-foreground">

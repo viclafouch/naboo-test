@@ -60,7 +60,7 @@ const Pagination = ({
         onClick={() => {
           onPageChange(currentPage - 1)
         }}
-        aria-label="Page précédente"
+        aria-label="Previous page"
       >
         <ChevronLeftIcon data-icon="inline-start" />
       </Button>
@@ -101,7 +101,7 @@ const Pagination = ({
         onClick={() => {
           onPageChange(currentPage + 1)
         }}
-        aria-label="Page suivante"
+        aria-label="Next page"
       >
         <ChevronRightIcon data-icon="inline-end" />
       </Button>

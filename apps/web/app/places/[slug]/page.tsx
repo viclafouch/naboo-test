@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { formatLocation } from '@/helpers/format'
+import { formatLocation } from '@/lib/place-format'
 import { getAllSlugs, getPlaceBySlug } from '@/lib/places'
 import { PlaceDetail } from './_components/place-detail'
 

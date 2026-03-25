@@ -1,12 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { StarIcon } from 'lucide-react'
 import { CATEGORY_LABELS, PRICE_UNIT } from '@/constants/place'
-import {
-  formatLocation,
-  formatPlaceImageAlt,
-  formatPrice,
-  formatRating
-} from '@/helpers/format'
+import { formatPrice, formatRating } from '@/helpers/format'
+import { formatLocation, formatPlaceImageAlt } from '@/lib/place-format'
 import type { Place } from '@/types/place'
 import {
   Badge,
@@ -51,8 +48,12 @@ const PlaceCard = ({ place, isPriority = false }: PlaceCardParams) => {
                 {PRICE_UNIT}
               </span>
             </p>
-            <p className="text-sm text-muted-foreground">
-              ★ {formatRating(place.rating)} ({place.reviewCount})
+            <p className="flex items-center gap-1 text-sm text-muted-foreground">
+              <StarIcon
+                className="size-3.5 fill-primary text-primary"
+                aria-hidden
+              />
+              {formatRating(place.rating)} ({place.reviewCount})
             </p>
           </div>
         </CardContent>

@@ -9,7 +9,9 @@ type SearchErrorParams = {
 const SearchError = ({ reset }: SearchErrorParams) => {
   return (
     <div className="flex flex-col items-center gap-4 py-16 text-center">
-      <p className="text-4xl">⚠️</p>
+      <p className="text-4xl" aria-hidden>
+        ⚠️
+      </p>
       <h2 className="text-xl font-semibold">Something went wrong</h2>
       <p className="max-w-sm text-muted-foreground">
         An error occurred while loading the search results. Please try again.

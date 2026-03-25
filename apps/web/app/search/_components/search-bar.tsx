@@ -33,7 +33,7 @@ const SearchBar = () => {
 
   const handleCategoryChange = (value: string | null) => {
     void setParams({
-      category: value || null,
+      category: (value || null) as typeof params.category,
       page: null
     })
   }
@@ -57,7 +57,10 @@ const SearchBar = () => {
         className="flex-1"
       />
       <div className="flex gap-2">
-        <Select value={params.category} onValueChange={handleCategoryChange}>
+        <Select
+          value={params.category ?? ''}
+          onValueChange={handleCategoryChange}
+        >
           <SelectTrigger aria-label="Filter by category" className="w-36">
             <SelectValue placeholder="All types" />
           </SelectTrigger>

@@ -1,9 +1,15 @@
-import { createSearchParamsCache, parseAsString } from 'nuqs/server'
+import {
+  createSearchParamsCache,
+  parseAsInteger,
+  parseAsString,
+  parseAsStringEnum
+} from 'nuqs/server'
+import { CATEGORIES } from '@/constants/place'
 
 export const searchParamsParsers = {
   q: parseAsString.withDefault(''),
-  category: parseAsString.withDefault(''),
-  page: parseAsString.withDefault('1')
+  category: parseAsStringEnum([...CATEGORIES]),
+  page: parseAsInteger.withDefault(1)
 }
 
 export const searchParamsCache = createSearchParamsCache(searchParamsParsers)
