@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test'
 
-test.describe('uRL state sharing', () => {
+test.describe('sharing search state via URL', () => {
   test('preserves search state when opening a shared URL', async ({ page }) => {
     await page.goto('/search?q=paris')
 

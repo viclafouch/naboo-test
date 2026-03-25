@@ -1,4 +1,4 @@
-const priceFormatter = new Intl.NumberFormat('fr-FR', {
+const priceFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'EUR',
   maximumFractionDigits: 0

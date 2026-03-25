@@ -12,7 +12,7 @@ export const CATEGORY_LABELS = {
   villa: 'Villa'
 } as const satisfies Record<(typeof CATEGORIES)[number], string>
 
-export const PRICE_UNIT = '/nuit'
+export const PRICE_UNIT = '/night'
 
 export const SEARCH_MAX_DELAY_MS = 600
 
