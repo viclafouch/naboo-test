@@ -16,6 +16,7 @@ import { searchParamsParsers } from './search-params'
 
 const SearchBar = () => {
   const [isLoading, startTransition] = React.useTransition()
+
   const [params, setParams] = useQueryStates(searchParamsParsers, {
     shallow: false,
     startTransition

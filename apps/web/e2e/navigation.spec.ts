@@ -17,12 +17,17 @@ test.describe('detail page navigation', () => {
     )
   })
 
-  test('navigates back to search', async ({ page }) => {
-    await page.goto('/places/cozy-apartment-paris')
+  test('browser back preserves search context', async ({ page }) => {
+    await page.goto('/search?q=paris')
 
-    await page.getByText('Back to search').click()
+    const article = page
+      .getByRole('article')
+      .filter({ hasText: 'Cozy Apartment in Le Marais' })
 
-    await expect(page).toHaveURL('/search')
-    await expect(page.getByRole('article')).not.toHaveCount(0)
+    await article.getByRole('link').click()
+    await expect(page).toHaveURL(/\/places\/cozy-apartment-paris/)
+
+    await page.goBack()
+    await expect(page).toHaveURL('/search?q=paris')
   })
 })

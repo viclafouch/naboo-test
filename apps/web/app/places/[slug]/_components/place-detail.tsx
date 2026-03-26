@@ -1,17 +1,10 @@
 import Image from 'next/image'
-import Link from 'next/link'
-import {
-  BedDoubleIcon,
-  ChevronLeftIcon,
-  MapPinIcon,
-  StarIcon,
-  UsersIcon
-} from 'lucide-react'
+import { BedDoubleIcon, MapPinIcon, StarIcon, UsersIcon } from 'lucide-react'
 import { CATEGORY_LABELS, PRICE_UNIT } from '@/constants/place'
 import { formatPrice, formatRating } from '@/helpers/format'
 import { formatLocation, formatPlaceImageAlt } from '@/lib/place-format'
 import type { Place } from '@/types/place'
-import { Badge, Button } from '@naboo/design-system'
+import { Badge } from '@naboo/design-system'
 
 type PlaceDetailParams = {
   place: Place
@@ -20,16 +13,6 @@ type PlaceDetailParams = {
 const PlaceDetail = ({ place }: PlaceDetailParams) => {
   return (
     <article className="flex flex-col gap-6">
-      <Button
-        variant="ghost"
-        size="sm"
-        nativeButton={false}
-        render={<Link href="/search" />}
-        className="w-fit"
-      >
-        <ChevronLeftIcon data-icon="inline-start" />
-        Back to search
-      </Button>
       <Image
         src={place.imageUrl}
         alt={formatPlaceImageAlt(place)}
