@@ -1,8 +1,7 @@
 'use client'
 
-import * as React from 'react'
+import React from 'react'
 import { useQueryStates } from 'nuqs'
-import { CATEGORIES, CATEGORY_LABELS } from '@/constants/place'
 import {
   Button,
   Input,
@@ -12,6 +11,7 @@ import {
   SelectTrigger,
   SelectValue
 } from '@naboo/design-system'
+import { CATEGORIES, CATEGORY_LABELS } from '@/constants/place'
 import { searchParamsParsers } from './search-params'
 
 const SearchBar = () => {

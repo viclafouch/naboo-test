@@ -1,0 +1,17 @@
+{
+  "name": "@naboo/oxc-config",
+  "version": "0.0.0",
+  "description": "Shared oxlint & oxfmt configurations for Naboo Places",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./base": "./base.ts",
+    "./react": "./react.ts",
+    "./next": "./next.ts",
+    "./formatting": "./formatting.ts"
+  },
+  "dependencies": {
+    "@viclafouch/oxc-config": "1.0.0-alpha.3",
+    "eslint-plugin-playwright": "^2.10.1"
+  }
+}

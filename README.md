@@ -30,8 +30,8 @@ pnpm build
 ## Lint & Type Check
 
 ```bash
-pnpm lint        # TypeScript + ESLint
-pnpm lint:fix    # TypeScript + ESLint auto-fix
+pnpm lint        # TypeScript + oxlint + oxfmt
+pnpm lint:fix    # TypeScript + oxlint auto-fix + oxfmt
 pnpm check-types # TypeScript only
 ```
 
@@ -52,6 +52,6 @@ pnpm exec playwright install --with-deps chromium
 ```
 apps/web/                  Next.js 16 application
 packages/design-system/    Shared UI components (shadcn/ui + Base UI)
-packages/eslint-config/    Shared ESLint configurations
+packages/oxc-config/       Shared oxlint & oxfmt configurations
 packages/typescript-config/ Shared TypeScript configurations
 ```

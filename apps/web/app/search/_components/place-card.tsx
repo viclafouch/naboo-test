@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { StarIcon } from 'lucide-react'
+import { Badge, Card, CardContent, CardHeader } from '@naboo/design-system'
 import { CATEGORY_LABELS, PRICE_UNIT } from '@/constants/place'
 import { formatPrice, formatRating } from '@/helpers/format'
 import { formatLocation, formatPlaceImageAlt } from '@/lib/place-format'
 import type { Place } from '@/types/place'
-import { Badge, Card, CardContent, CardHeader } from '@naboo/design-system'
 
 type PlaceCardParams = {
   place: Place

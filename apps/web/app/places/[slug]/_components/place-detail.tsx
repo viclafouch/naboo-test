@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import { BedDoubleIcon, MapPinIcon, StarIcon, UsersIcon } from 'lucide-react'
+import { Badge } from '@naboo/design-system'
 import { CATEGORY_LABELS, PRICE_UNIT } from '@/constants/place'
 import { formatPrice, formatRating } from '@/helpers/format'
 import { formatLocation, formatPlaceImageAlt } from '@/lib/place-format'
 import type { Place } from '@/types/place'
-import { Badge } from '@naboo/design-system'
 
 type PlaceDetailParams = {
   place: Place

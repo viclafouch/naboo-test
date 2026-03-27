@@ -49,7 +49,6 @@ const Pagination = ({
 
   return (
     <nav
-      role="navigation"
       aria-label="Pagination"
       className={cn('flex items-center gap-1', className)}
     >

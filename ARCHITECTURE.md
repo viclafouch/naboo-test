@@ -19,7 +19,7 @@ apps/web/
   e2e/                    Playwright E2E tests
 
 packages/design-system/   Shared UI components (shadcn/ui base-nova + CVA)
-packages/eslint-config/   Shared ESLint configs (base, react, next, playwright)
+packages/oxc-config/      Shared oxlint & oxfmt configs (base, react, next, formatting)
 packages/typescript-config/ Shared TypeScript configs (base, nextjs, react-library)
 ```
 
@@ -200,7 +200,7 @@ This project doesn't implement the invalidation side (no Server Actions, no admi
 
 ### CI Pipeline (GitHub Actions)
 
-Single sequential job: `pnpm install` → `pnpm lint` (TypeScript + ESLint) → `pnpm build` → Playwright install → `pnpm test:e2e`
+Single sequential job: `pnpm install` → `pnpm lint` (TypeScript + oxlint + oxfmt) → `pnpm build` → Playwright install → `pnpm test:e2e`
 
 ## What Is NOT Implemented (and why)
 

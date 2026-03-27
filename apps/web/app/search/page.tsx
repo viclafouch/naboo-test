@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import type { Metadata } from 'next'
 import type { SearchParams } from 'nuqs/server'
 import { PlaceCardSkeletonGrid } from './_components/place-card-skeleton'

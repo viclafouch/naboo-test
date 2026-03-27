@@ -2,15 +2,20 @@
   "name": "naboo-places",
   "description": "Place discovery platform — Turborepo monorepo",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "turbo dev",
     "build": "turbo build",
-    "lint": "turbo lint",
-    "lint:fix": "turbo lint:fix",
+    "lint": "turbo lint && oxfmt --check '**/*.{ts,tsx,js,jsx}'",
+    "lint:fix": "turbo lint:fix && pnpm run format",
+    "format": "oxfmt '**/*.{ts,tsx,js,jsx}'",
     "check-types": "turbo check-types",
     "test:e2e": "turbo test:e2e"
   },
   "devDependencies": {
+    "@naboo/oxc-config": "workspace:*",
+    "oxfmt": "^0.42.0",
+    "oxlint": "^1.57.0",
     "turbo": "^2.8.20"
   },
   "packageManager": "pnpm@9.15.4"
